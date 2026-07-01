@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot name="pillbox">
+  <!-- 藥盒底座 -->
+  <link name="world"/>
+  <link name="pillbox_base">
+    <visual>
+      <geometry>
+        <box size="0.35 0.25 0.05"/>
+      </geometry>
+      <material name="white">
+        <color rgba="0.9 0.9 0.9 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="pillbox_base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="pillbox_base"/>
+    <origin xyz="0.4 0.0 0.025" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 21 格藥盒（7列 x 3行：早/午/晚） -->
+  <!-- 週一 -->
+  <link name="slot_mon_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_mon_am" type="fixed"><parent link="pillbox_base"/><child link="slot_mon_am"/><origin xyz="0.12 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_mon_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_mon_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_mon_pm"/><origin xyz="0.12 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_mon_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_mon_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_mon_eve"/><origin xyz="0.12 -0.08 0.045" rpy="0 0 0"/></joint>
+
+  <!-- 週二 -->
+  <link name="slot_tue_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green2"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_tue_am" type="fixed"><parent link="pillbox_base"/><child link="slot_tue_am"/><origin xyz="0.07 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_tue_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow2"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_tue_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_tue_pm"/><origin xyz="0.07 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_tue_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange2"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_tue_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_tue_eve"/><origin xyz="0.07 -0.08 0.045" rpy="0 0 0"/></joint>
+
+  <!-- 週三 -->
+  <link name="slot_wed_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green3"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_wed_am" type="fixed"><parent link="pillbox_base"/><child link="slot_wed_am"/><origin xyz="0.02 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_wed_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow3"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_wed_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_wed_pm"/><origin xyz="0.02 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_wed_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange3"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_wed_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_wed_eve"/><origin xyz="0.02 -0.08 0.045" rpy="0 0 0"/></joint>
+
+  <!-- 週四 -->
+  <link name="slot_thu_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green4"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_thu_am" type="fixed"><parent link="pillbox_base"/><child link="slot_thu_am"/><origin xyz="-0.03 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_thu_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow4"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_thu_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_thu_pm"/><origin xyz="-0.03 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_thu_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange4"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_thu_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_thu_eve"/><origin xyz="-0.03 -0.08 0.045" rpy="0 0 0"/></joint>
+
+  <!-- 週五 -->
+  <link name="slot_fri_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green5"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_fri_am" type="fixed"><parent link="pillbox_base"/><child link="slot_fri_am"/><origin xyz="-0.08 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_fri_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow5"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_fri_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_fri_pm"/><origin xyz="-0.08 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_fri_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange5"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_fri_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_fri_eve"/><origin xyz="-0.08 -0.08 0.045" rpy="0 0 0"/></joint>
+
+  <!-- 週六 -->
+  <link name="slot_sat_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green6"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_sat_am" type="fixed"><parent link="pillbox_base"/><child link="slot_sat_am"/><origin xyz="-0.13 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_sat_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow6"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_sat_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_sat_pm"/><origin xyz="-0.13 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_sat_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange6"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_sat_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_sat_eve"/><origin xyz="-0.13 -0.08 0.045" rpy="0 0 0"/></joint>
+
+  <!-- 週日 -->
+  <link name="slot_sun_am"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="green7"><color rgba="0.2 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_sun_am" type="fixed"><parent link="pillbox_base"/><child link="slot_sun_am"/><origin xyz="-0.18 0.08 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_sun_pm"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="yellow7"><color rgba="0.8 0.8 0.2 1.0"/></material></visual></link>
+  <joint name="j_sun_pm" type="fixed"><parent link="pillbox_base"/><child link="slot_sun_pm"/><origin xyz="-0.18 0.0 0.045" rpy="0 0 0"/></joint>
+
+  <link name="slot_sun_eve"><visual><geometry><box size="0.04 0.06 0.04"/></geometry><material name="orange7"><color rgba="0.9 0.5 0.1 1.0"/></material></visual></link>
+  <joint name="j_sun_eve" type="fixed"><parent link="pillbox_base"/><child link="slot_sun_eve"/><origin xyz="-0.18 -0.08 0.045" rpy="0 0 0"/></joint>
+</robot>
